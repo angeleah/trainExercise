@@ -10,3 +10,7 @@ Usage:
   + cd into the directory.
   + using ruby 2.1.0 ( if using rbenv and you don't have this ruby, after installing, $: gem install bundler)
 
+- To run the specs:
+  + follow the steps for getting started.
+  + $: rspec
+
