@@ -1,0 +1,4 @@
+TRAIN_LINE, ROUTE_NAME, RUN_NUMBER, OPERATOR_ID
+Metra, AquaLine, P42, ADaidone
+El, VioletLine, V01, VHour
+El, PurpleLine, A01, SHow

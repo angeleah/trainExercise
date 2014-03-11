@@ -21,4 +21,12 @@ describe "train_exercise_app" do
       expect(last_response.body).to include(train.operator)
     end
   end
+
+  it "allows users to upload CSV files" do
+    Train.destroy_all
+    expect(Train.count).to eq(0)
+    file = Rack::Test::UploadedFile.new("spec/fixtures/upload_data.csv", content_type = "text/plain", binary = false)
+    post "/import", :myfile => file
+    expect(Train.count).to eq(3)
+  end
 end

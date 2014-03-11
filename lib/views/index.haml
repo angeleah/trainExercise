@@ -10,3 +10,8 @@
       %td #{data.route}
       %td #{data.run_number}
       %td #{data.operator}
+
+%h3 Import a CSV
+%form(action='/import' method='POST' enctype='multipart/form-data')
+  %input(type='file' name='myfile')
+  %input(type='submit' value='Upload' )
