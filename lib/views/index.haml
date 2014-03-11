@@ -10,8 +10,42 @@
       %td #{data.route}
       %td #{data.run_number}
       %td #{data.operator}
-
-%h3 Import a CSV
+%hr
+%h2 Import a CSV
 %form(action='/import' method='POST' enctype='multipart/form-data')
   %input(type='file' name='myfile')
   %input(type='submit' value='Upload' )
+%h3 Details for a successful upload:
+%p You can import your own CSV via the CSV uploader! Here is the format that's needed to make this a successful upload.
+%ul
+  %li Each row of the CSV will contain data for the following values:Train Line (El, Metra, Amtrak), Route Name (ie. Brown Line), Run Number, Operator ID
+  %li The first row of the CSV will always contain the name detailing the field for the information in the order provided.
+  %li Each line of the CSV will be denoted with a combination of a new line character and carriage return: \r\n
+
+%p Sample File Format:
+%table
+  %tr
+    %th TRAIN_LINE,
+    %th ROUTE_NAME,
+    %th RUN_NUMBER,
+    %th OPERATOR_ID
+    %tr
+      %td Metra,
+      %td UPN,
+      %td M405,
+      %td AJohnson
+    %tr
+      %td Metra,
+      %td UPNW,
+      %td M511,
+      %td YSmith
+    %tr
+      %td Amtrak,
+      %td Hiawatha,
+      %td A006,
+      %td LBeck
+    %tr
+      %td El,
+      %td RedLine,
+      %td E432,
+      %td LHill
