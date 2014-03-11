@@ -7,7 +7,7 @@ describe FileImporter do
   let(:sample_data_2) { File.join( "spec", "fixtures", "sample_data_2.csv")}
   let(:sample_data_3) { File.join( "spec", "fixtures", "sample_data_3.csv")}
 
-  after do
+  before do
     Train.destroy_all
   end
 

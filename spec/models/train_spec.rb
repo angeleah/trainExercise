@@ -1,27 +1,33 @@
 require 'spec_helper'
+require 'active_record'
 require 'models/train'
 
 describe Train do
 
-  let(:train) {  Train.create!(
+  before :all do
+    @train = Train.find_or_create_by!(
       line: "El",
-      route: "BrownLine",
-      run_number: "E102",
-      operator: "SJones"
+      route: "GreenLine",
+      run_number: "E107",
+      operator: "SJonesey"
     )
-  }
+  end
+
+  after :all do
+    @train.destroy
+  end
 
   it "has a line" do
-    expect(train.line).to eq("El")
+    expect(@train.line).to eq("El")
   end
 
   it "has a route" do
-    expect(train.route).to eq("BrownLine")
+    expect(@train.route).to eq("GreenLine")
   end
   it "has a run_number" do
-    expect(train.run_number).to eq("E102")
+    expect(@train.run_number).to eq("E107")
   end
   it "has an operator" do
-    expect(train.operator).to eq("SJones")
+    expect(@train.operator).to eq("SJonesey")
   end
 end
