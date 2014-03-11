@@ -1,6 +1,11 @@
 source 'https://rubygems.org'
 
 gem 'activerecord'
+gem 'haml'
 gem 'pry'
+gem 'rack-test'
 gem 'rspec'
+gem 'shotgun'
+gem 'sinatra'
 gem 'sqlite3'
+gem 'thin'

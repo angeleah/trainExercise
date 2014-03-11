@@ -1,0 +1,12 @@
+%table
+  %tr
+    %th Train Line
+    %th Route
+    %th Run Number
+    %th Operator ID
+  -@schedule.each do |data|
+    %tr
+      %td #{data.line}
+      %td #{data.route}
+      %td #{data.run_number}
+      %td #{data.operator}

@@ -14,3 +14,12 @@ Usage:
   + follow the steps for getting started.
   + $: rspec
 
+-To run the app:
+  + If you ran the specs, the database will contain data.
+  + start the server with either shotgun or ruby.
+    - To use shotgun:
+      + $ shotgun lib/train_exercise_app.rb
+      + navigate to localhost:9393
+    - to run with ruby:
+      + $ ruby lib/train_exercise_app.rb
+      + navigate to localhost:4567
