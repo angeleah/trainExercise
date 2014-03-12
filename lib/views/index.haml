@@ -17,8 +17,11 @@
         %form{ action: '/destroy', method: 'POST' }
           %input{ type: 'hidden', name: "id", value: "#{data.id}" }
           %input{ type: 'submit', value: 'Delete'}
+
 %hr
+
 %h2 Add a new single line of train schedule data.
+
 %form{ action: '/create', method: 'POST' }
   %label Train Line:
   %input{ type: "text", name: "line" }
@@ -29,19 +32,26 @@
   %label Operator ID:
   %input{ type: "text", name: "operator" }
   %input{ type: 'submit', value: 'Add' }
+
 %hr
+
 %h2 Import a CSV
+
 %form{ action: '/import', method: 'POST', enctype: 'multipart/form-data' }
   %input{ type: 'file', name: 'myfile' }
   %input{ type: 'submit', value: 'Upload' }
+
 %h3 Details for a successful upload:
+
 %p You can import your own CSV via the CSV uploader! Here is the format that's needed to make this a successful upload.
+
 %ul
   %li Each row of the CSV will contain data for the following values:Train Line { El, Metra, Amtrak }, Route Name { ie. Brown Line }, Run Number, Operator ID
   %li The first row of the CSV will always contain the name detailing the field for the information in the order provided.
   %li Each line of the CSV will be denoted with a combination of a new line character and carriage return: \r\n
 
 %p Sample File Format:
+
 %table
   %tr
     %th TRAIN_LINE,

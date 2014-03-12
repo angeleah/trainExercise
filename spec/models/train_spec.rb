@@ -4,31 +4,31 @@ require 'models/train'
 
 describe Train do
 
-  before :all do
-    @train = Train.find_or_create_by!(
+  let!(:train) {
+    Train.find_or_create_by!(
       line: "El",
       route: "GreenLine",
       run_number: "E107",
       operator: "SJonesey"
     )
-  end
+  }
 
   after :all do
-    @train.destroy
+    train.destroy
   end
 
   it "has a line" do
-    expect(@train.line).to eq("El")
+    expect(train.line).to eq("El")
   end
 
   it "has a route" do
-    expect(@train.route).to eq("GreenLine")
+    expect(train.route).to eq("GreenLine")
   end
   it "has a run_number" do
-    expect(@train.run_number).to eq("E107")
+    expect(train.run_number).to eq("E107")
   end
 
   it "has an operator" do
-    expect(@train.operator).to eq("SJonesey")
+    expect(train.operator).to eq("SJonesey")
   end
 end

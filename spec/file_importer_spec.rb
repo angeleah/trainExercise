@@ -11,7 +11,7 @@ describe FileImporter do
     Train.destroy_all
   end
 
-  context "#import" do
+  describe "#import" do
     it "imports the data from a CSV" do
       expect {
         FileImporter.new(sample_data_3).import

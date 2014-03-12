@@ -43,9 +43,9 @@ describe "train_exercise_app" do
 
   it "allows users to upload CSV files" do
     file = Rack::Test::UploadedFile.new("spec/fixtures/upload_data.csv", content_type = "text/plain", binary = false)
-    expect  {
+    expect {
       post "/import", myfile: file
-    }.to change{ Train.count }.by(3)
+    }.to change { Train.count }.by(3)
   end
 
   describe "CRUD" do
@@ -54,13 +54,13 @@ describe "train_exercise_app" do
       train
       expect {
         post "/destroy", id: train.id
-      }.to change{ Train.count }.by(-1)
+      }.to change { Train.count }.by(-1)
     end
 
     it "creates a single record of train data" do
-      expect{
+      expect {
         post "/create", line: "El", route: "GreenLine", run_number: "E107", operator: "SJonesey"
-      }.to change{ Train.count }.by(1)
+      }.to change { Train.count }.by(1)
     end
 
     it "updates an existing record of train data" do
