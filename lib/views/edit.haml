@@ -1,0 +1,12 @@
+%h2 Edit
+%form{ action: '/update', method: 'POST' }
+  %input{ type: 'hidden', name: "id", value: "#{@train.id}" }
+  %label Train Line:
+  %input{ type: "text", name: "line", value: "#{@train.line}" }
+  %label Route:
+  %input{ type: "text", name: "route", value: "#{@train.route}"}
+  %label Run Number:
+  %input{ type: "text", name: "run_number", value: "#{@train.run_number}"}
+  %label Operator ID:
+  %input{ type: "text", name: "operator", value: "#{@train.operator}"}
+  %input{ type: 'submit', value:'Update' }

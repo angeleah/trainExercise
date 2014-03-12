@@ -15,11 +15,14 @@ Usage:
   + $: rspec
 
 -To run the app:
-  + If you ran the specs, the database will contain data.
-  + start the server with either shotgun or ruby.
+  + Start the server with either shotgun or ruby.
     - To use shotgun:
       + $ shotgun lib/train_exercise_app.rb
       + navigate to localhost:9393
     - to run with ruby:
       + $ ruby lib/train_exercise_app.rb
       + navigate to localhost:4567
+  + Add data:
+    - There are two ways to add data.
+      + Add data by using the form to add a single row of train data.
+      + Use the CSV uploader to upload a CSV file of train data. You can provide this file yourself or use one of the files found at 'spec/fixtures'.

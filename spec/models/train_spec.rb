@@ -27,6 +27,7 @@ describe Train do
   it "has a run_number" do
     expect(@train.run_number).to eq("E107")
   end
+
   it "has an operator" do
     expect(@train.operator).to eq("SJonesey")
   end

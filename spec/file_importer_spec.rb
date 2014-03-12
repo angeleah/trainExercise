@@ -17,11 +17,11 @@ describe FileImporter do
         FileImporter.new(sample_data_3).import
       }.to change(Train, :count).by(6)
     end
-  end
 
-  it "does not add duplicate data" do
-    FileImporter.new(sample_data_1).import
-    FileImporter.new(sample_data_2).import
-    Train.all.count.should == 6
+    it "does not add duplicate data" do
+      FileImporter.new(sample_data_1).import
+      FileImporter.new(sample_data_2).import
+      Train.all.count.should == 6
+    end
   end
 end
